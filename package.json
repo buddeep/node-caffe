@@ -1,0 +1,29 @@
+{
+  "name": "caffe-node",
+  "version": "1.0.0",
+  "description": "Caffe Deep Learning for Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foysavas/caffe-node.git"
+  },
+  "keywords": [
+    "caffe",
+    "deep",
+    "learning",
+    "neural",
+    "nets",
+    "ai",
+    "machine",
+    "learning"
+  ],
+  "author": "Foy Savas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foysavas/caffe-node/issues"
+  },
+  "homepage": "https://github.com/foysavas/caffe-node"
+}
