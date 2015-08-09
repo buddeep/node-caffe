@@ -3,10 +3,10 @@
     {
       'target_name': 'NativeNodeCaffe',
       'sources': [
-          'src/NodeCaffe.cpp',
-          'src/NodeCaffe/root.cpp',
           'src/NodeCaffe/Blob.cpp',
-          'src/NodeCaffe/Layer.cpp'
+          'src/NodeCaffe/Layer.cpp',
+          'src/NodeCaffe/root.cpp',
+          'src/NodeCaffe.cpp',
       ],
       'include_dirs': [
         '<!(node -e "require(\'nan\')")',

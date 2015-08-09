@@ -1,12 +1,10 @@
-#ifndef NODECAFFE_LAYER_H
-#define NODECAFFE_LAYER_H
+#ifndef NODECAFFE_BLOB_H
+#define NODECAFFE_BLOB_H
 
 #include <node.h>
 #include <nan.h>
 #include <caffe/caffe.hpp>
 #include "shared.h"
-
-using namespace Nan;
 
 namespace NodeCaffe {
 
@@ -17,7 +15,7 @@ class Blob : public Nan::ObjectWrap {
   explicit Blob();
   ~Blob();
 
-  static Persistent<v8::Function> constructor;
+  static Nan::Persistent<v8::Function> constructor;
 
   static NAN_METHOD(New);
 

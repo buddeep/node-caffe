@@ -2,7 +2,7 @@
 
 namespace NodeCaffe {
 
-Persistent<v8::Function> Blob::constructor;
+Nan::Persistent<v8::Function> Blob::constructor;
 
 Blob::Blob() {}
 
@@ -14,7 +14,7 @@ NAN_MODULE_INIT(Blob::Init) {
   tpl->InstanceTemplate()->SetInternalFieldCount(1);
   v8::Local<v8::ObjectTemplate> proto = tpl->PrototypeTemplate();
 
-  SetPrototypeMethod(tpl,"reshape",Blob::reshape);
+  Nan::SetPrototypeMethod(tpl,"reshape",Blob::reshape);
 
   SetAccessor(proto, Nan::New("num").ToLocalChecked(),
       Blob::get_num, Blob::set_num);
@@ -24,15 +24,13 @@ NAN_MODULE_INIT(Blob::Init) {
       Blob::get_height, Blob::set_height);
   SetAccessor(proto, Nan::New("width").ToLocalChecked(),
       Blob::get_width, Blob::set_width);
-  /*
   SetAccessor(proto, Nan::New("data").ToLocalChecked(),
       Blob::get_data, Blob::set_data);
   SetAccessor(proto, Nan::New("diff").ToLocalChecked(),
       Blob::get_diff, Blob::set_diff);
-  */
 
   constructor.Reset(tpl->GetFunction());
-  Set(target, Nan::New("Blob").ToLocalChecked(),tpl->GetFunction());
+  Nan::Set(target, Nan::New("Blob").ToLocalChecked(),tpl->GetFunction());
 }
 
 NAN_METHOD(Blob::New) {

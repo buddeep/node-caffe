@@ -16,6 +16,6 @@ void InitAll(Handle<Object> exports) {
   exports->Set(Nan::New<v8::String>("set_mode_gpu").ToLocalChecked(),
       Nan::New<FunctionTemplate>(NodeCaffe::set_mode_gpu)->GetFunction());
   NodeCaffe::Blob::Init(exports);
-  //NodeCaffe::Layer::Init(exports);
+  NodeCaffe::Layer::Init(exports);
 }
 NODE_MODULE(NativeNodeCaffe, InitAll);
