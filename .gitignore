@@ -1,0 +1,16 @@
+#Project
+.lock-wscript
+*.dylib
+*.so
+*.o
+*.lo
+*.Makefile
+*.target.gyp.mk
+build
+Release
+Debug
+node_modules
+Makefile.gyp
+gyp-*-tool
+.dirstamp
+npm-debug.log

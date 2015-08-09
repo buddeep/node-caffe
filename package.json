@@ -1,14 +1,16 @@
 {
-  "name": "caffe-node",
+  "name": "node-caffe",
   "version": "1.0.0",
   "description": "Caffe Deep Learning for Node",
-  "main": "index.js",
+  "main": "./lib/node-caffe",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node-gyp configure && node-gyp rebuild",
+    "test_built": "mocha -gc --reporter spec",
+    "test": "node-gyp rebuild && mocha -gc --reporter spec"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/foysavas/caffe-node.git"
+    "url": "https://github.com/foysavas/node-caffe.git"
   },
   "keywords": [
     "caffe",
@@ -23,7 +25,18 @@
   "author": "Foy Savas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/foysavas/caffe-node/issues"
+    "url": "https://github.com/foysavas/node-caffe/issues"
   },
-  "homepage": "https://github.com/foysavas/caffe-node"
+  "homepage": "https://github.com/foysavas/node-caffe",
+  "engines": {
+    "node": ">=0.12.5"
+  },
+  "dependencies": {
+    "nan": "^2.0.4",
+    "ndarray": "^1.0.18",
+    "protobufjs": "^4.0.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
 }
