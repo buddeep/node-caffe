@@ -1,6 +1,7 @@
 #ifndef NODECAFFE_BLOB_H
 #define NODECAFFE_BLOB_H
 
+#include <vector>
 #include <node.h>
 #include <nan.h>
 #include <caffe/caffe.hpp>
@@ -13,6 +14,7 @@ class Blob : public Nan::ObjectWrap {
   static NAN_MODULE_INIT(Init);
  private:
   explicit Blob();
+  explicit Blob(const std::vector<int>& shape);
   ~Blob();
 
   static Nan::Persistent<v8::Function> constructor;
@@ -21,20 +23,8 @@ class Blob : public Nan::ObjectWrap {
 
   static NAN_METHOD(reshape);
 
-  static NAN_GETTER(get_num);
-  static NAN_SETTER(set_num);
-
-  static NAN_GETTER(get_channels);
-  static NAN_SETTER(set_channels);
-
-  static NAN_GETTER(get_height);
-  static NAN_SETTER(set_height);
-
-  static NAN_GETTER(get_width);
-  static NAN_SETTER(set_width);
-
-  static NAN_GETTER(get_count);
-  static NAN_SETTER(set_count);
+  static NAN_GETTER(get_shape);
+  static NAN_SETTER(set_shape);
 
   static NAN_GETTER(get_data);
   static NAN_SETTER(set_data);
@@ -42,7 +32,7 @@ class Blob : public Nan::ObjectWrap {
   static NAN_GETTER(get_diff);
   static NAN_SETTER(set_diff);
 
-  caffe::Blob<Dtype> blob_;
+  caffe::Blob<Dtype>* blob_;
 };
 
 }

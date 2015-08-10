@@ -6,7 +6,7 @@
           'src/NodeCaffe/Blob.cpp',
           'src/NodeCaffe/Layer.cpp',
           'src/NodeCaffe/root.cpp',
-          'src/NodeCaffe.cpp',
+          'src/NodeCaffe.cpp'
       ],
       'include_dirs': [
         '<!(node -e "require(\'nan\')")',
@@ -35,7 +35,11 @@
         ['OS=="mac"', {
           'xcode_settings': {
             'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
-            'MACOSX_DEPLOYMENT_TARGET': '10.5',
+            'MACOSX_DEPLOYMENT_TARGET': '10.9',
+            'OTHER_LDFLAGS': [
+            ],
+            'OTHER_CPLUSPLUSFLAGS' : [
+            ],
             'OTHER_CFLAGS': [
             ]
           },
